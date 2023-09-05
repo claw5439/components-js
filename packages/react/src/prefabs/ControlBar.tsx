@@ -11,7 +11,7 @@ import { useMediaQuery } from '../hooks/internal';
 import { useMaybeLayoutContext } from '../context';
 import { supportsScreenSharing } from '@livekit/components-core';
 import { mergeProps } from '../utils';
-
+import { TrackSource } from 'livekit-client/dist/src/proto/livekit_models_pb';
 /** @public */
 export type ControlBarControls = {
   microphone?: boolean;
@@ -66,9 +66,9 @@ export function ControlBar({ variation, controls, ...props }: ControlBarProps) {
     visibleControls.microphone = false;
     visibleControls.screenShare = false;
   } else {
-    visibleControls.camera ??= localPermissions.canPublish;
-    visibleControls.microphone ??= localPermissions.canPublish;
-    visibleControls.screenShare ??= localPermissions.canPublish;
+    visibleControls.camera ??= localPermissions.canPublish && localPermissions.canPublishSources.includes(TrackSource.CAMERA);
+    visibleControls.microphone ??= localPermissions.canPublish && localPermissions.canPublishSources.includes(TrackSource.MICROPHONE);
+    visibleControls.screenShare ??= localPermissions.canPublish && localPermissions.canPublishSources.includes(TrackSource.SCREEN_SHARE);
     visibleControls.chat ??= localPermissions.canPublishData && controls?.chat;
   }
 
