@@ -1,5 +1,22 @@
 # @livekit/components-react
 
+## 1.2.0
+
+### Minor Changes
+
+- fix handling of multiple tracks of the same source from the same participant - [#618](https://github.com/livekit/components-js/pull/618) ([@Ocupe](https://github.com/Ocupe))
+
+- Update AudioTrack and VideoTrack components to accept track references. - [#622](https://github.com/livekit/components-js/pull/622) ([@Ocupe](https://github.com/Ocupe))
+
+### Patch Changes
+
+- fix handling of multiple tracks of the same source from the same participant - [#618](https://github.com/livekit/components-js/pull/618) ([@Ocupe](https://github.com/Ocupe))
+
+- Fix: media tracks were memoized on participant identity - [#620](https://github.com/livekit/components-js/pull/620) ([@dbkr](https://github.com/dbkr))
+
+- Updated dependencies [[`233eb34`](https://github.com/livekit/components-js/commit/233eb346f0b86fccf117d9f8c9675ea346595147), [`233eb34`](https://github.com/livekit/components-js/commit/233eb346f0b86fccf117d9f8c9675ea346595147)]:
+  - @livekit/components-core@0.6.16
+
 ## 1.1.7
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @livekit/components-core
 
+## 0.6.16
+
+### Patch Changes
+
+- fix handling of multiple tracks of the same source from the same participant - [#618](https://github.com/livekit/components-js/pull/618) ([@Ocupe](https://github.com/Ocupe))
+
+- fix handling of multiple tracks of the same source from the same participant - [#618](https://github.com/livekit/components-js/pull/618) ([@Ocupe](https://github.com/Ocupe))
+
 ## 0.6.15
 
 ### Patch Changes
