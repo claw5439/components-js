@@ -11,7 +11,6 @@ import { useMediaQuery } from '../hooks/internal';
 import { useMaybeLayoutContext } from '../context';
 import { supportsScreenSharing } from '@livekit/components-core';
 import { mergeProps } from '../utils';
-import { TrackSource } from 'livekit-client/dist/src/proto/livekit_models_pb';
 /** @public */
 export type ControlBarControls = {
   microphone?: boolean;
@@ -43,6 +42,33 @@ export interface ControlBarProps extends React.HTMLAttributes<HTMLDivElement> {
  * ```
  * @public
  */
+enum TrackSource {
+  /**
+   * @generated from enum value: UNKNOWN = 0;
+   */
+  UNKNOWN = 0,
+
+  /**
+   * @generated from enum value: CAMERA = 1;
+   */
+  CAMERA = 1,
+
+  /**
+   * @generated from enum value: MICROPHONE = 2;
+   */
+  MICROPHONE = 2,
+
+  /**
+   * @generated from enum value: SCREEN_SHARE = 3;
+   */
+  SCREEN_SHARE = 3,
+
+  /**
+   * @generated from enum value: SCREEN_SHARE_AUDIO = 4;
+   */
+  SCREEN_SHARE_AUDIO = 4,
+}
+
 export function ControlBar({ variation, controls, ...props }: ControlBarProps) {
   const [isChatOpen, setIsChatOpen] = React.useState(false);
   const layoutContext = useMaybeLayoutContext();
